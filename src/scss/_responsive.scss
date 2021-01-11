@@ -1,0 +1,27 @@
+$minIphone: 500px;
+$maxIphone: 690px;
+$minTablet: $minIphone + 1;
+$maxTablet: $maxIphone + 1;
+
+// content는 마치 style에서 작성한 것과 아래의 mixin에서 작성한 것을 하나로 묶어주는 느낌이다.
+// 아래의 미디어 쿼리에 관련한 부분을 작성하고 상황에 맞는 변화들을 style에 작성한다면,
+// 가독성이 좋은 코드가 될 것 이다.
+@mixin responsive($device) {
+  @if $device == "iphone" {
+    @media screen and (min-width: $minIphone) and (max-width: $maxIphone) {
+      @content;
+    }
+  } @else if $device == "tablet" {
+    @media screen and (min-width: $minTablet) and (max-width: $maxTablet) {
+      @content;
+    }
+  } @else if $device == "iphone-l" {
+    @media screen and (min-width: $minIphone) and (max-width: $maxIphone) {
+      @content;
+    }
+  } @else if $device == "tablet-l" {
+    @media screen and (min-width: $minTablet) and (max-width: $maxTablet) {
+      @content;
+    }
+  }
+}

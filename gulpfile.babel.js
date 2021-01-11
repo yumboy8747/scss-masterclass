@@ -9,9 +9,10 @@ sass.compiler = require("node-sass");
 const routes = {
   css: {
     watch: "src/scss/*",
+    // src파일에서 일어나는 모든 일을 css로 compile되는 것이다.
     src: "src/scss/styles.scss",
-    dest: "dist/css"
-  }
+    dest: "dist/css",
+  },
 };
 
 const styles = () =>
@@ -21,7 +22,7 @@ const styles = () =>
     .pipe(
       autoprefixer({
         flexbox: true,
-        grid: "autoplace"
+        grid: "autoplace",
       })
     )
     .pipe(minify())

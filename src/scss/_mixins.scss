@@ -1,0 +1,12 @@
+// @mixin이라는 것과 같이 사용하고 싶은 이름을 작성하고 마치 함수 처럼 사용할 수 있다.
+// 실제로 아래와 같이 if문을 작성하는 것도 가능하다.
+
+@mixin link($word) {
+  text-decoration: none;
+  display: block;
+  @if $word == "odd" {
+    color: blue;
+  } @else {
+    color: red;
+  }
+}
